@@ -95,7 +95,7 @@
     },
     {
       "id": "assembly3",
-      "name": "装配厂 III",
+      "name": "装配机III",
       "source": "https://wiki.coigame.com/Assembly_III",
       "workers": 8,
       "power": 0.15,
@@ -169,7 +169,7 @@
       "maintenance": 24,
       "cost": 1,
       "source": "https://wiki.coigame.com/Nuclear_Reactor",
-      "status": "Wiki 机制模型，待游戏核验"
+      "status": "档位/燃料/增殖原型核对通过；其他机制待核验"
     },
     {
       "id": "nr2_operation",
@@ -186,7 +186,7 @@
       "maintenance": 36,
       "cost": 1,
       "source": "https://wiki.coigame.com/Nuclear_Reactor_II",
-      "status": "Wiki 机制模型，待游戏核验"
+      "status": "档位/燃料/增殖原型核对通过；其他机制待核验"
     },
     {
       "id": "fbr_operation",
@@ -203,7 +203,7 @@
       "maintenance": 43,
       "cost": 1,
       "source": "https://wiki.coigame.com/Fast_Breeder_Reactor",
-      "status": "Wiki 机制模型，待游戏核验"
+      "status": "档位/燃料/增殖原型核对通过；其他机制待核验"
     },
     {
       "id": "enrichment_0",
@@ -542,7 +542,7 @@
     },
     {
       "id": "assembly3_0",
-      "name": "装配厂 III · 4%浓缩铀 + 钢 → 铀燃料棒",
+      "name": "装配机III · 4%浓缩铀 + 钢 → 铀燃料棒",
       "buildingId": "assembly3",
       "duration": 60.0,
       "inputs": {
@@ -778,5 +778,11 @@
       "station": "主电站"
     }
   ],
-  "stationWater": {}
+  "stationWater": {},
+  "reactorParameterEvidence": {
+    "gameVersion": "0.8.7d",
+    "exporterVersion": "0.2.0",
+    "prototypeChecksPassed": 23,
+    "scope": "档位、换热、燃料周期和增殖倍率；不含动态控制、事故和实际容量测量"
+  }
 }

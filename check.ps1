@@ -16,6 +16,8 @@ Get-ChildItem web\*.js | ForEach-Object {
 if ($LASTEXITCODE -ne 0) { throw 'Building math tests failed.' }
 & node test_building_views.js
 if ($LASTEXITCODE -ne 0) { throw 'Building view tests failed.' }
+& powershell -NoProfile -ExecutionPolicy Bypass -File .\test-mod.ps1
+if ($LASTEXITCODE -ne 0) { throw 'In-game mod snapshot tests failed.' }
 if (!$SkipDesktop) {
     New-Item -ItemType Directory -Force build | Out-Null
     $report = Join-Path $PSScriptRoot ('build\check-' + [guid]::NewGuid().ToString('N') + '.json')

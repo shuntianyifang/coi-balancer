@@ -1,0 +1,11 @@
+{
+  "id": "BalancerDataExporter",
+  "version": "0.2.1",
+  "display_name": "Balancer Data Exporter",
+  "description_short": "Read-only prototype export for production planning.",
+  "authors": ["shuntianyifang"],
+  "min_game_version": "0.8.7",
+  "primary_dlls": ["BalancerDataExporter.dll"],
+  "can_add_to_saved_game": true,
+  "can_remove_from_saved_game": true
+}

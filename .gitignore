@@ -15,3 +15,6 @@ building-views-preview.jpg
 build/
 dist/
 *.spec
+
+web/local-game-data.json
+web/local-game-data.report.json

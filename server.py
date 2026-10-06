@@ -3,11 +3,21 @@ import math
 import copy
 from pathlib import Path
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
+from concurrent.futures import ThreadPoolExecutor
 import numpy as np
 from scipy.optimize import linprog, milp, Bounds, LinearConstraint
 from nuclear import compiled, analyze
 
 ROOT = Path(__file__).parent
+# Keep all HTTP solver calls on one thread, including sequential requests.
+# A lock alone still moves HiGHS between different request threads.
+SOLVER_EXECUTOR = ThreadPoolExecutor(max_workers=1, thread_name_prefix='coi-solver')
+
+def process_request(payload, path):
+    if path == '/api/plant':
+        validate(payload)
+        return {'ok': True, **analyze(payload)}
+    return calculate(payload, path.rsplit('/', 1)[1])
 
 def number(v, label):
     if isinstance(v, bool) or not isinstance(v, (int, float)) or not math.isfinite(v):
@@ -154,7 +164,14 @@ def calculate(data, mode):
         for f in flows:
             if f['remainder'] < -1e-6 and f['product'] not in ['electricity'] and '@' not in f['product']:
                 warnings.append(f"{f['product']} 存在 {abs(f['remainder']):.3f}/60 缺口；核电结果需要外部供给或补齐辅助链。")
-    return {'ok': True, 'mode': mode, 'plant':plant_report, 'warnings': warnings, 'flows': flows, 'recipes': [{'id': r['id'], 'name': r['name'], 'rate': float(v), 'buildings': b, 'load': float(v/b) if b else 0, 'templateId':r.get('templateId',r['id'].split('@')[0]),'station':r.get('station')} for r,v,b in zip(rs,x,buildings)], 'totals': {**{k: float(sum(r.get(k,0)*v for r,v in zip(rs,x))) for k in ['power','maintenance']}, 'workers':float(sum(r.get('workers',0)*b for r,b in zip(rs,buildings))), 'buildings':float(sum(buildings))}}
+    maintenance_by_product = {}
+    for r, v in zip(rs, x):
+        if v > 1e-7 and r.get('maintenance', 0) > 0 and r.get('maintenanceProduct') and not r.get('maintenanceUnknown'):
+            product = r['maintenanceProduct']
+            maintenance_by_product[product] = maintenance_by_product.get(product, 0) + r.get('maintenance', 0) * float(v)
+    # Different maintenance tiers are separate products, not interchangeable units.
+    maintenance_total = None if len(maintenance_by_product) > 1 or any(r.get('maintenanceUnknown') and v > 1e-7 for r, v in zip(rs, x)) else float(sum(r.get('maintenance', 0) * v for r, v in zip(rs, x)))
+    return {'ok': True, 'mode': mode, 'plant':plant_report, 'maintenanceByProduct':maintenance_by_product, 'warnings': warnings, 'flows': flows, 'recipes': [{'id': r['id'], 'name': r['name'], 'rate': float(v), 'buildings': b, 'load': float(v/b) if b else 0, 'templateId':r.get('templateId',r['id'].split('@')[0]),'station':r.get('station')} for r,v,b in zip(rs,x,buildings)], 'totals': {**{k: (maintenance_total if k=='maintenance' else float(sum(r.get(k,0)*v for r,v in zip(rs,x)))) for k in ['power','maintenance']}, 'workers':float(sum(r.get('workers',0)*b for r,b in zip(rs,buildings))), 'buildings':float(sum(buildings))}}
 
 class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
@@ -167,9 +184,7 @@ class Handler(SimpleHTTPRequestHandler):
             if length > 2_000_000:
                 raise ValueError('数据超过 2MB')
             payload=json.loads(self.rfile.read(length))
-            if self.path=='/api/plant':
-                validate(payload); output={'ok':True,**analyze(payload)}
-            else: output = calculate(payload, self.path.rsplit('/', 1)[1])
+            output = SOLVER_EXECUTOR.submit(process_request, payload, self.path).result()
             self.send_response(200)
         except Exception as e:
             output = {'ok': False, 'message': str(e)}
