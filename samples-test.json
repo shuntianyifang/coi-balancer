@@ -1,0 +1,376 @@
+{
+  "basic": {
+    "version": "合成演示 · 非游戏配方",
+    "recipes": [
+      {
+        "id": "smelt",
+        "name": "冶炼",
+        "inputs": {
+          "ore": 2
+        },
+        "outputs": {
+          "iron": 1
+        },
+        "duration": 30,
+        "power": 1,
+        "workers": 4,
+        "maintenance": 0,
+        "count": 2,
+        "load": 1,
+        "min": 0,
+        "max": null,
+        "cost": 1,
+        "status": "待核验",
+        "source": "示例数据，请对照目标版本游戏确认"
+      },
+      {
+        "id": "parts",
+        "name": "零件制造",
+        "inputs": {
+          "iron": 2
+        },
+        "outputs": {
+          "parts": 1
+        },
+        "duration": 60,
+        "power": 0,
+        "workers": 0,
+        "maintenance": 0,
+        "count": 2,
+        "load": 1,
+        "min": 0,
+        "max": null,
+        "cost": 1,
+        "status": "待核验",
+        "source": "示例数据，请对照目标版本游戏确认"
+      }
+    ],
+    "policies": {
+      "ore": {
+        "import": true,
+        "cost": 10
+      },
+      "parts": {
+        "target": 2
+      }
+    }
+  },
+  "nuclear": {
+    "version": "核燃料讨论模型 · 未核验 · 不含完整发电与辅助耗材",
+    "recipes": [
+      {
+        "id": "fresh",
+        "name": "新鲜浓缩",
+        "inputs": {
+          "YC": 6
+        },
+        "outputs": {
+          "U4": 1,
+          "DU": 5
+        },
+        "duration": 60,
+        "power": 0,
+        "workers": 0,
+        "maintenance": 0,
+        "count": 0,
+        "load": 1,
+        "min": 0,
+        "max": null,
+        "cost": 1,
+        "status": "待核验",
+        "source": "示例数据，请对照目标版本游戏确认"
+      },
+      {
+        "id": "nr",
+        "name": "NR II 燃料循环",
+        "inputs": {
+          "U4": 2
+        },
+        "outputs": {
+          "spent": 2
+        },
+        "duration": 60,
+        "power": 0,
+        "workers": 0,
+        "maintenance": 0,
+        "count": 0,
+        "load": 1,
+        "min": 8,
+        "max": 8,
+        "cost": 1,
+        "status": "待核验",
+        "source": "示例数据，请对照目标版本游戏确认"
+      },
+      {
+        "id": "pu",
+        "name": "乏燃料提钚",
+        "inputs": {
+          "spent": 8
+        },
+        "outputs": {
+          "RU1": 6,
+          "Pu": 1
+        },
+        "duration": 60,
+        "power": 0,
+        "workers": 0,
+        "maintenance": 0,
+        "count": 0,
+        "load": 1,
+        "min": 0,
+        "max": null,
+        "cost": 1,
+        "status": "待核验",
+        "source": "示例数据，请对照目标版本游戏确认"
+      },
+      {
+        "id": "blanket",
+        "name": "乏燃料制毯",
+        "inputs": {
+          "spent": 1
+        },
+        "outputs": {
+          "blanket": 3
+        },
+        "duration": 60,
+        "power": 0,
+        "workers": 0,
+        "maintenance": 0,
+        "count": 0,
+        "load": 1,
+        "min": 0,
+        "max": null,
+        "cost": 1,
+        "status": "待核验",
+        "source": "示例数据，请对照目标版本游戏确认"
+      },
+      {
+        "id": "reenrich",
+        "name": "回收铀浓缩",
+        "inputs": {
+          "RU1": 4
+        },
+        "outputs": {
+          "U4": 1,
+          "DU": 3
+        },
+        "duration": 60,
+        "power": 0,
+        "workers": 0,
+        "maintenance": 0,
+        "count": 0,
+        "load": 1,
+        "min": 0,
+        "max": null,
+        "cost": 1,
+        "status": "待核验",
+        "source": "示例数据，请对照目标版本游戏确认"
+      },
+      {
+        "id": "core",
+        "name": "钚制核心",
+        "inputs": {
+          "Pu": 1
+        },
+        "outputs": {
+          "core": 4
+        },
+        "duration": 60,
+        "power": 0,
+        "workers": 0,
+        "maintenance": 0,
+        "count": 0,
+        "load": 1,
+        "min": 0,
+        "max": null,
+        "cost": 1,
+        "status": "待核验",
+        "source": "示例数据，请对照目标版本游戏确认"
+      },
+      {
+        "id": "breeder",
+        "name": "3× FBR",
+        "inputs": {
+          "core": 16,
+          "blanket": 48
+        },
+        "outputs": {
+          "spentCore": 16,
+          "EB": 48
+        },
+        "duration": 60,
+        "power": 0,
+        "workers": 0,
+        "maintenance": 0,
+        "count": 0,
+        "load": 1,
+        "min": 2,
+        "max": 2,
+        "cost": 1,
+        "status": "待核验",
+        "source": "示例数据，请对照目标版本游戏确认"
+      },
+      {
+        "id": "zero",
+        "name": "0× FBR",
+        "inputs": {
+          "core": 8
+        },
+        "outputs": {
+          "spentCore": 8
+        },
+        "duration": 60,
+        "power": 0,
+        "workers": 0,
+        "maintenance": 0,
+        "count": 0,
+        "load": 1,
+        "min": 9,
+        "max": 9,
+        "cost": 1,
+        "status": "待核验",
+        "source": "示例数据，请对照目标版本游戏确认"
+      },
+      {
+        "id": "recover",
+        "name": "核心回收",
+        "inputs": {
+          "spentCore": 16
+        },
+        "outputs": {
+          "core": 12
+        },
+        "duration": 60,
+        "power": 0,
+        "workers": 0,
+        "maintenance": 0,
+        "count": 0,
+        "load": 1,
+        "min": 0,
+        "max": null,
+        "cost": 1,
+        "status": "待核验",
+        "source": "示例数据，请对照目标版本游戏确认"
+      },
+      {
+        "id": "split",
+        "name": "浓缩毯分离",
+        "inputs": {
+          "EB": 8
+        },
+        "outputs": {
+          "blanket": 6,
+          "core": 2
+        },
+        "duration": 60,
+        "power": 0,
+        "workers": 0,
+        "maintenance": 0,
+        "count": 0,
+        "load": 1,
+        "min": 0,
+        "max": null,
+        "cost": 1,
+        "status": "待核验",
+        "source": "示例数据，请对照目标版本游戏确认"
+      },
+      {
+        "id": "du",
+        "name": "DU 制毯",
+        "inputs": {
+          "DU": 10,
+          "EB": 2
+        },
+        "outputs": {
+          "blanket": 4
+        },
+        "duration": 60,
+        "power": 0,
+        "workers": 0,
+        "maintenance": 0,
+        "count": 0,
+        "load": 1,
+        "min": 0,
+        "max": null,
+        "cost": 1,
+        "status": "待核验",
+        "source": "示例数据，请对照目标版本游戏确认"
+      },
+      {
+        "id": "ycblanket",
+        "name": "黄饼制毯",
+        "inputs": {
+          "YC": 3
+        },
+        "outputs": {
+          "blanket": 1
+        },
+        "duration": 60,
+        "power": 0,
+        "workers": 0,
+        "maintenance": 0,
+        "count": 0,
+        "load": 1,
+        "min": 0,
+        "max": null,
+        "cost": 1,
+        "status": "待核验",
+        "source": "示例数据，请对照目标版本游戏确认"
+      }
+    ],
+    "policies": {
+      "YC": {
+        "import": true,
+        "cost": 1000
+      },
+      "DU": {
+        "surplus": true
+      },
+      "EB": {
+        "surplus": true
+      }
+    }
+  },
+  "farm": {
+    "version": "农业接口演示 · 合成轮作数据 · 不可作为游戏建造依据",
+    "recipes": [
+      {
+        "id": "rotation",
+        "name": "玉米/大豆完整轮作",
+        "inputs": {
+          "water": 120,
+          "fertilizer": 4
+        },
+        "outputs": {
+          "corn": 24,
+          "soy": 12
+        },
+        "duration": 240,
+        "power": 0,
+        "workers": 20,
+        "maintenance": 2,
+        "count": 3,
+        "load": 1,
+        "min": 0,
+        "max": null,
+        "cost": 1,
+        "status": "待核验",
+        "source": "用于演示完整轮作平均化；需替换周期、实际收成和肥料需求"
+      }
+    ],
+    "policies": {
+      "water": {
+        "import": true
+      },
+      "fertilizer": {
+        "import": true
+      },
+      "corn": {
+        "target": 12
+      },
+      "soy": {
+        "surplus": true
+      }
+    }
+  }
+}

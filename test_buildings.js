@@ -1,0 +1,10 @@
+const assert=require('node:assert/strict');
+const {flows}=require('./web/buildings.js');
+const r={id:'a',buildingId:'furnace',duration:30,inputs:{ore:2},outputs:{iron:1},power:2,workers:4};
+const i={recipeId:'a',buildingId:'furnace',load:.5,enabled:true};
+assert.deepEqual(flows(i,[r]),{inputs:{ore:2},outputs:{iron:1},power:1,workers:4});
+assert.equal(flows({...i,enabled:false},[r]).outputs.iron,0);
+assert.equal(flows({...i,enabled:false},[r]).workers,4);
+assert.throws(()=>flows({...i,buildingId:'farm'},[r]));
+assert.throws(()=>flows({...i,load:2},[r]));
+console.log('Building math: 5 checks passed');

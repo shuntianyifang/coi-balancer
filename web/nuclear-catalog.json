@@ -1,0 +1,782 @@
+{
+  "version": "核电机制 v0.4 · Update 3 机制 / Wiki 2026-10-06 快照 · 待游戏核验",
+  "productNames": {
+    "water": "水",
+    "uranium_rod": "铀燃料棒",
+    "mox_rod": "MOX 燃料棒",
+    "spent_fuel": "乏铀燃料",
+    "spent_mox": "乏 MOX 燃料",
+    "core": "核心燃料",
+    "spent_core": "乏核心燃料",
+    "blanket": "毯式燃料",
+    "enriched_blanket": "浓缩毯式燃料",
+    "steam_high": "高压蒸汽",
+    "steam_super": "超高压蒸汽",
+    "steam_low": "低压蒸汽",
+    "steam_depleted": "废蒸汽",
+    "mechanical_mw": "机械功",
+    "electricity": "电力",
+    "u4": "4%浓缩铀",
+    "u20": "20%浓缩铀",
+    "ru1": "1%回收铀",
+    "du": "贫铀",
+    "yellowcake": "黄饼",
+    "hf": "氟化氢",
+    "pu": "钚",
+    "salt": "盐",
+    "steel": "钢",
+    "acid": "酸",
+    "molten_glass": "熔融玻璃",
+    "fission_product": "裂变产物"
+  },
+  "buildings": [
+    {
+      "id": "nr1",
+      "name": "核反应堆 I",
+      "source": "https://wiki.coigame.com/Nuclear_Reactor",
+      "workers": 80,
+      "power": 0,
+      "maintenance": 24,
+      "wikiIcon": "Nuclear Reactor.png",
+      "reactorType": "nr1",
+      "maxLevel": 3,
+      "autoAllowed": false
+    },
+    {
+      "id": "nr2",
+      "name": "核反应堆 II",
+      "source": "https://wiki.coigame.com/Nuclear_Reactor_II",
+      "workers": 110,
+      "power": 0,
+      "maintenance": 36,
+      "wikiIcon": "Nuclear Reactor II.png",
+      "reactorType": "nr2",
+      "maxLevel": 4,
+      "autoAllowed": true
+    },
+    {
+      "id": "fbr",
+      "name": "快中子增殖堆 FBR",
+      "source": "https://wiki.coigame.com/Fast_Breeder_Reactor",
+      "workers": 200,
+      "power": 0,
+      "maintenance": 43,
+      "wikiIcon": "Fast Breeder Reactor.png",
+      "reactorType": "fbr",
+      "maxLevel": 4,
+      "autoAllowed": true
+    },
+    {
+      "id": "enrichment",
+      "name": "浓缩厂",
+      "source": "https://wiki.coigame.com/Enrichment_Plant",
+      "workers": 14,
+      "power": 4,
+      "maintenance": 4,
+      "wikiIcon": "Enrichment Plant.png"
+    },
+    {
+      "id": "reprocess",
+      "name": "核燃料再处理厂",
+      "source": "https://wiki.coigame.com/Nuclear_Reprocessing_Plant",
+      "workers": 30,
+      "power": 2,
+      "maintenance": 10,
+      "wikiIcon": "Nuclear Reprocessing Plant.png"
+    },
+    {
+      "id": "chem2",
+      "name": "化工厂 II",
+      "source": "https://wiki.coigame.com/Chemical_Plant_II",
+      "workers": 14,
+      "power": 0.4,
+      "maintenance": 4,
+      "wikiIcon": "Chemical Plant.png"
+    },
+    {
+      "id": "assembly3",
+      "name": "装配厂 III",
+      "source": "https://wiki.coigame.com/Assembly_III",
+      "workers": 8,
+      "power": 0.15,
+      "maintenance": 3.8,
+      "wikiIcon": "Assembly (Electric).png"
+    },
+    {
+      "id": "super_turbine",
+      "name": "超高压汽轮机",
+      "source": "https://wiki.coigame.com/Super-Pressure_Turbine",
+      "workers": 1,
+      "power": 0,
+      "maintenance": 3,
+      "wikiIcon": "Super-pressure Turbine.png",
+      "plantRole": "turbine"
+    },
+    {
+      "id": "high_turbine",
+      "name": "高压汽轮机 II",
+      "source": "https://wiki.coigame.com/High-Pressure_Turbine_II",
+      "workers": 2,
+      "power": 0,
+      "maintenance": 2,
+      "wikiIcon": "High-Pressure Turbine II.png",
+      "plantRole": "turbine"
+    },
+    {
+      "id": "low_turbine",
+      "name": "低压汽轮机 II",
+      "source": "https://wiki.coigame.com/Low-Pressure_Turbine_II",
+      "workers": 2,
+      "power": 0,
+      "maintenance": 2,
+      "wikiIcon": "Low-Pressure Turbine II.png",
+      "plantRole": "turbine"
+    },
+    {
+      "id": "generator",
+      "name": "大型发电机",
+      "source": "https://wiki.coigame.com/Power_Generator_(Large)",
+      "workers": 0,
+      "power": 0,
+      "maintenance": 8,
+      "wikiIcon": "Power Generator (Large).png",
+      "plantRole": "generator"
+    },
+    {
+      "id": "cooling",
+      "name": "大型冷却塔",
+      "source": "https://wiki.coigame.com/Cooling_Tower_(Large)",
+      "workers": 0,
+      "power": 0,
+      "maintenance": 0,
+      "wikiIcon": "Cooling Tower (Large).png",
+      "plantRole": "cooling"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "nr1_operation",
+      "name": "核反应堆 I运行",
+      "buildingId": "nr1",
+      "reactorType": "nr1",
+      "duration": 60,
+      "inputs": {},
+      "outputs": {},
+      "min": 0,
+      "max": 0,
+      "power": 0,
+      "workers": 80,
+      "maintenance": 24,
+      "cost": 1,
+      "source": "https://wiki.coigame.com/Nuclear_Reactor",
+      "status": "Wiki 机制模型，待游戏核验"
+    },
+    {
+      "id": "nr2_operation",
+      "name": "核反应堆 II运行",
+      "buildingId": "nr2",
+      "reactorType": "nr2",
+      "duration": 60,
+      "inputs": {},
+      "outputs": {},
+      "min": 0,
+      "max": 0,
+      "power": 0,
+      "workers": 110,
+      "maintenance": 36,
+      "cost": 1,
+      "source": "https://wiki.coigame.com/Nuclear_Reactor_II",
+      "status": "Wiki 机制模型，待游戏核验"
+    },
+    {
+      "id": "fbr_operation",
+      "name": "快中子增殖堆 FBR运行",
+      "buildingId": "fbr",
+      "reactorType": "fbr",
+      "duration": 60,
+      "inputs": {},
+      "outputs": {},
+      "min": 0,
+      "max": 0,
+      "power": 0,
+      "workers": 200,
+      "maintenance": 43,
+      "cost": 1,
+      "source": "https://wiki.coigame.com/Fast_Breeder_Reactor",
+      "status": "Wiki 机制模型，待游戏核验"
+    },
+    {
+      "id": "enrichment_0",
+      "name": "浓缩厂 · 浓缩毯式燃料 → 毯式燃料 + 核心燃料",
+      "buildingId": "enrichment",
+      "duration": 60.0,
+      "inputs": {
+        "enriched_blanket": 8.0,
+        "electricity": 2.0
+      },
+      "outputs": {
+        "blanket": 6.0,
+        "core": 2.0
+      },
+      "power": 2,
+      "workers": 14,
+      "maintenance": 4,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Enrichment_Plant",
+      "plantRole": null
+    },
+    {
+      "id": "enrichment_1",
+      "name": "浓缩厂 · 浓缩毯式燃料 → 毯式燃料 + 钚",
+      "buildingId": "enrichment",
+      "duration": 60.0,
+      "inputs": {
+        "enriched_blanket": 16.0,
+        "electricity": 4.0
+      },
+      "outputs": {
+        "blanket": 12.0,
+        "pu": 1.0
+      },
+      "power": 4,
+      "workers": 14,
+      "maintenance": 4,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Enrichment_Plant",
+      "plantRole": null
+    },
+    {
+      "id": "enrichment_2",
+      "name": "浓缩厂 · 浓缩毯式燃料 → 毯式燃料 + 20%浓缩铀",
+      "buildingId": "enrichment",
+      "duration": 60.0,
+      "inputs": {
+        "enriched_blanket": 16.0,
+        "electricity": 4.0
+      },
+      "outputs": {
+        "blanket": 12.0,
+        "u20": 2.0
+      },
+      "power": 4,
+      "workers": 14,
+      "maintenance": 4,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Enrichment_Plant",
+      "plantRole": null
+    },
+    {
+      "id": "enrichment_3",
+      "name": "浓缩厂 · 4%浓缩铀 + 氟化氢 → 20%浓缩铀 + 贫铀",
+      "buildingId": "enrichment",
+      "duration": 120.0,
+      "inputs": {
+        "u4": 5.0,
+        "hf": 2.0,
+        "electricity": 8.0
+      },
+      "outputs": {
+        "u20": 1.0,
+        "du": 4.0
+      },
+      "power": 4,
+      "workers": 14,
+      "maintenance": 4,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Enrichment_Plant",
+      "plantRole": null
+    },
+    {
+      "id": "enrichment_4",
+      "name": "浓缩厂 · 1%回收铀 + 氟化氢 → 4%浓缩铀 + 贫铀",
+      "buildingId": "enrichment",
+      "duration": 120.0,
+      "inputs": {
+        "ru1": 4.0,
+        "hf": 2.0,
+        "electricity": 8.0
+      },
+      "outputs": {
+        "u4": 1.0,
+        "du": 3.0
+      },
+      "power": 4,
+      "workers": 14,
+      "maintenance": 4,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Enrichment_Plant",
+      "plantRole": null
+    },
+    {
+      "id": "enrichment_5",
+      "name": "浓缩厂 · 黄饼 + 氟化氢 → 4%浓缩铀 + 贫铀",
+      "buildingId": "enrichment",
+      "duration": 120.0,
+      "inputs": {
+        "yellowcake": 6.0,
+        "hf": 2.0,
+        "electricity": 8.0
+      },
+      "outputs": {
+        "u4": 1.0,
+        "du": 5.0
+      },
+      "power": 4,
+      "workers": 14,
+      "maintenance": 4,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Enrichment_Plant",
+      "plantRole": null
+    },
+    {
+      "id": "reprocess_0",
+      "name": "核燃料再处理厂 · 乏核心燃料 + 酸 + 熔融玻璃 + 钢 → 核心燃料 + 裂变产物",
+      "buildingId": "reprocess",
+      "duration": 60.0,
+      "inputs": {
+        "spent_core": 16.0,
+        "acid": 2.0,
+        "molten_glass": 2.0,
+        "steel": 1.0,
+        "electricity": 2.0
+      },
+      "outputs": {
+        "core": 12.0,
+        "fission_product": 2.0
+      },
+      "power": 2,
+      "workers": 30,
+      "maintenance": 10,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Nuclear_Reprocessing_Plant",
+      "plantRole": null,
+      "computing": 24
+    },
+    {
+      "id": "reprocess_1",
+      "name": "核燃料再处理厂 · 乏铀燃料 + 酸 + 熔融玻璃 + 盐 → 毯式燃料 + 裂变产物",
+      "buildingId": "reprocess",
+      "duration": 30.0,
+      "inputs": {
+        "spent_fuel": 1.0,
+        "acid": 1.0,
+        "molten_glass": 1.0,
+        "salt": 1.0,
+        "electricity": 1.0
+      },
+      "outputs": {
+        "blanket": 1.0,
+        "fission_product": 1.0
+      },
+      "power": 2,
+      "workers": 30,
+      "maintenance": 10,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Nuclear_Reprocessing_Plant",
+      "plantRole": null,
+      "computing": 24
+    },
+    {
+      "id": "reprocess_2",
+      "name": "核燃料再处理厂 · 乏铀燃料 + 酸 + 熔融玻璃 → 1%回收铀 + 钚 + 裂变产物",
+      "buildingId": "reprocess",
+      "duration": 60.0,
+      "inputs": {
+        "spent_fuel": 8.0,
+        "acid": 6.0,
+        "molten_glass": 4.0,
+        "electricity": 2.0
+      },
+      "outputs": {
+        "ru1": 6.0,
+        "pu": 1.0,
+        "fission_product": 2.0
+      },
+      "power": 2,
+      "workers": 30,
+      "maintenance": 10,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Nuclear_Reprocessing_Plant",
+      "plantRole": null,
+      "computing": 24
+    },
+    {
+      "id": "reprocess_3",
+      "name": "核燃料再处理厂 · 乏 MOX 燃料 + 酸 + 熔融玻璃 + 盐 → 毯式燃料 + 裂变产物",
+      "buildingId": "reprocess",
+      "duration": 30.0,
+      "inputs": {
+        "spent_mox": 1.0,
+        "acid": 1.0,
+        "molten_glass": 1.0,
+        "salt": 1.0,
+        "electricity": 1.0
+      },
+      "outputs": {
+        "blanket": 1.0,
+        "fission_product": 1.0
+      },
+      "power": 2,
+      "workers": 30,
+      "maintenance": 10,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Nuclear_Reprocessing_Plant",
+      "plantRole": null,
+      "computing": 24
+    },
+    {
+      "id": "chem2_0",
+      "name": "化工厂 II · 浓缩毯式燃料 + 贫铀 + 盐 → 毯式燃料",
+      "buildingId": "chem2",
+      "duration": 60.0,
+      "inputs": {
+        "enriched_blanket": 2.0,
+        "du": 10.0,
+        "salt": 4.0,
+        "electricity": 0.4
+      },
+      "outputs": {
+        "blanket": 4.0
+      },
+      "power": 0.4,
+      "workers": 14,
+      "maintenance": 4,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Chemical_Plant_II",
+      "plantRole": null
+    },
+    {
+      "id": "chem2_1",
+      "name": "化工厂 II · 20%浓缩铀 + 盐 → 核心燃料",
+      "buildingId": "chem2",
+      "duration": 60.0,
+      "inputs": {
+        "u20": 2.0,
+        "salt": 4.0,
+        "electricity": 0.4
+      },
+      "outputs": {
+        "core": 4.0
+      },
+      "power": 0.4,
+      "workers": 14,
+      "maintenance": 4,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Chemical_Plant_II",
+      "plantRole": null
+    },
+    {
+      "id": "chem2_2",
+      "name": "化工厂 II · 钚 + 贫铀 → MOX 燃料棒",
+      "buildingId": "chem2",
+      "duration": 60.0,
+      "inputs": {
+        "pu": 1.0,
+        "du": 4.0,
+        "electricity": 0.4
+      },
+      "outputs": {
+        "mox_rod": 2.0
+      },
+      "power": 0.4,
+      "workers": 14,
+      "maintenance": 4,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Chemical_Plant_II",
+      "plantRole": null
+    },
+    {
+      "id": "chem2_3",
+      "name": "化工厂 II · 钚 + 盐 → 核心燃料",
+      "buildingId": "chem2",
+      "duration": 60.0,
+      "inputs": {
+        "pu": 1.0,
+        "salt": 4.0,
+        "electricity": 0.4
+      },
+      "outputs": {
+        "core": 4.0
+      },
+      "power": 0.4,
+      "workers": 14,
+      "maintenance": 4,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Chemical_Plant_II",
+      "plantRole": null
+    },
+    {
+      "id": "chem2_4",
+      "name": "化工厂 II · 黄饼 + 盐 → 毯式燃料",
+      "buildingId": "chem2",
+      "duration": 60.0,
+      "inputs": {
+        "yellowcake": 12.0,
+        "salt": 4.0,
+        "electricity": 0.4
+      },
+      "outputs": {
+        "blanket": 4.0
+      },
+      "power": 0.4,
+      "workers": 14,
+      "maintenance": 4,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Chemical_Plant_II",
+      "plantRole": null
+    },
+    {
+      "id": "assembly3_0",
+      "name": "装配厂 III · 4%浓缩铀 + 钢 → 铀燃料棒",
+      "buildingId": "assembly3",
+      "duration": 60.0,
+      "inputs": {
+        "u4": 2.0,
+        "steel": 1.0,
+        "electricity": 0.15
+      },
+      "outputs": {
+        "uranium_rod": 2.0
+      },
+      "power": 0.15,
+      "workers": 8,
+      "maintenance": 3.8,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Assembly_III",
+      "plantRole": null
+    },
+    {
+      "id": "super_turbine_0",
+      "name": "超高压汽轮机 · 超高压蒸汽 → 机械功 + 高压蒸汽",
+      "buildingId": "super_turbine",
+      "duration": 10.0,
+      "inputs": {
+        "steam_super": 8.0
+      },
+      "outputs": {
+        "mechanical_mw": 3.0,
+        "steam_high": 8.0
+      },
+      "power": 0,
+      "workers": 1,
+      "maintenance": 3,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Super-Pressure_Turbine",
+      "plantRole": "turbine"
+    },
+    {
+      "id": "high_turbine_0",
+      "name": "高压汽轮机 II · 高压蒸汽 → 机械功 + 低压蒸汽",
+      "buildingId": "high_turbine",
+      "duration": 10.0,
+      "inputs": {
+        "steam_high": 8.0
+      },
+      "outputs": {
+        "mechanical_mw": 2.0,
+        "steam_low": 8.0
+      },
+      "power": 0,
+      "workers": 2,
+      "maintenance": 2,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/High-Pressure_Turbine_II",
+      "plantRole": "turbine"
+    },
+    {
+      "id": "low_turbine_0",
+      "name": "低压汽轮机 II · 低压蒸汽 → 机械功 + 废蒸汽",
+      "buildingId": "low_turbine",
+      "duration": 10.0,
+      "inputs": {
+        "steam_low": 8.0
+      },
+      "outputs": {
+        "mechanical_mw": 1.0,
+        "steam_depleted": 8.0
+      },
+      "power": 0,
+      "workers": 2,
+      "maintenance": 2,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Low-Pressure_Turbine_II",
+      "plantRole": "turbine"
+    },
+    {
+      "id": "generator_0",
+      "name": "大型发电机 · 机械功 → 电力",
+      "buildingId": "generator",
+      "duration": 60.0,
+      "inputs": {
+        "mechanical_mw": 18.0
+      },
+      "outputs": {
+        "electricity": 15.0
+      },
+      "power": -15,
+      "workers": 0,
+      "maintenance": 8,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Power_Generator_(Large)",
+      "plantRole": "generator"
+    },
+    {
+      "id": "cooling_0",
+      "name": "大型冷却塔 · 废蒸汽 → 水",
+      "buildingId": "cooling",
+      "duration": 10.0,
+      "inputs": {
+        "steam_depleted": 16.0
+      },
+      "outputs": {
+        "water": 12.0
+      },
+      "power": 0,
+      "workers": 0,
+      "maintenance": 0,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Cooling_Tower_(Large)",
+      "plantRole": "cooling"
+    },
+    {
+      "id": "cooling_1",
+      "name": "大型冷却塔 · 高压蒸汽 → 水",
+      "buildingId": "cooling",
+      "duration": 10.0,
+      "inputs": {
+        "steam_high": 16.0
+      },
+      "outputs": {
+        "water": 10.0
+      },
+      "power": 0,
+      "workers": 0,
+      "maintenance": 0,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Cooling_Tower_(Large)",
+      "plantRole": "cooling"
+    },
+    {
+      "id": "cooling_2",
+      "name": "大型冷却塔 · 低压蒸汽 → 水",
+      "buildingId": "cooling",
+      "duration": 10.0,
+      "inputs": {
+        "steam_low": 16.0
+      },
+      "outputs": {
+        "water": 12.0
+      },
+      "power": 0,
+      "workers": 0,
+      "maintenance": 0,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Cooling_Tower_(Large)",
+      "plantRole": "cooling"
+    },
+    {
+      "id": "cooling_3",
+      "name": "大型冷却塔 · 超高压蒸汽 → 水",
+      "buildingId": "cooling",
+      "duration": 10.0,
+      "inputs": {
+        "steam_super": 16.0
+      },
+      "outputs": {
+        "water": 8.0
+      },
+      "power": 0,
+      "workers": 0,
+      "maintenance": 0,
+      "cost": 1,
+      "status": "Wiki 配方，待游戏核验",
+      "source": "https://wiki.coigame.com/Cooling_Tower_(Large)",
+      "plantRole": "cooling"
+    }
+  ],
+  "reactorParameters": {
+    "nrSteamPerLevel": 96,
+    "nrRodsPerLevel": 0.5,
+    "fbrSteamPerLevel": 96,
+    "fbrCorePerLevel": 4
+  },
+  "policies": {
+    "yellowcake": {
+      "import": true,
+      "cost": 100
+    },
+    "hf": {
+      "import": true,
+      "cost": 1
+    },
+    "salt": {
+      "import": true,
+      "cost": 1
+    },
+    "steel": {
+      "import": true,
+      "cost": 1
+    },
+    "acid": {
+      "import": true,
+      "cost": 1
+    },
+    "molten_glass": {
+      "import": true,
+      "cost": 1
+    },
+    "water": {
+      "import": true,
+      "cost": 1
+    },
+    "du": {
+      "surplus": true
+    },
+    "fission_product": {
+      "surplus": true
+    },
+    "electricity": {
+      "surplus": true
+    },
+    "pu": {
+      "surplus": true
+    }
+  },
+  "instances": [
+    {
+      "id": "nr2-demo",
+      "buildingId": "nr2",
+      "recipeId": "nr2_operation",
+      "level": 4,
+      "fuel": "uranium_rod",
+      "control": "manual",
+      "load": 1,
+      "enabled": true,
+      "station": "主电站"
+    }
+  ],
+  "stationWater": {}
+}

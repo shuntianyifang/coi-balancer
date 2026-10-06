@@ -1,0 +1,1347 @@
+{
+  "Nuclear_Reactor": [
+    {
+      "inputs": {
+        "Water": "192",
+        "Uranium Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent Fuel": "1"
+      },
+      "duration": "40"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "Uranium Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent Fuel": "1"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "Uranium Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent Fuel": "1"
+      },
+      "duration": "120"
+    }
+  ],
+  "Nuclear_Reactor_II": [
+    {
+      "inputs": {
+        "Water": "192",
+        "MOX Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent MOX": "1"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "Uranium Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent Fuel": "1"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "MOX Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent MOX": "1"
+      },
+      "duration": "40"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "Uranium Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent Fuel": "1"
+      },
+      "duration": "40"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "MOX Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent MOX": "1"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "Uranium Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent Fuel": "1"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "MOX Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent MOX": "1"
+      },
+      "duration": "120"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "Uranium Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent Fuel": "1"
+      },
+      "duration": "120"
+    }
+  ],
+  "Fast_Breeder_Reactor": [
+    {
+      "inputs": {
+        "Water": "96",
+        "CoreFuel": "2"
+      },
+      "outputs": {
+        "SteamSp": "96",
+        "CoreFuelDirty": "2"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "96",
+        "CoreFuel": "4",
+        "BlanketFuel": "4"
+      },
+      "outputs": {
+        "SteamSp": "96",
+        "CoreFuelDirty": "4",
+        "BlanketFuelEnriched": "4"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "24",
+        "CoreFuel": "4",
+        "BlanketFuel": "12"
+      },
+      "outputs": {
+        "SteamSp": "24",
+        "CoreFuelDirty": "4",
+        "BlanketFuelEnriched": "12"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "384",
+        "CoreFuel": "8"
+      },
+      "outputs": {
+        "SteamSp": "384",
+        "CoreFuelDirty": "8"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "384",
+        "CoreFuel": "16",
+        "BlanketFuel": "16"
+      },
+      "outputs": {
+        "SteamSp": "384",
+        "CoreFuelDirty": "16",
+        "BlanketFuelEnriched": "16"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "96",
+        "CoreFuel": "16",
+        "BlanketFuel": "48"
+      },
+      "outputs": {
+        "SteamSp": "96",
+        "CoreFuelDirty": "16",
+        "BlanketFuelEnriched": "48"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "24",
+        "Core Fuel": "4",
+        "Blanket Fuel": "12"
+      },
+      "outputs": {
+        "Steam (Super)": "24",
+        "Core Fuel (Spent)": "4",
+        "Blanket Fuel (Enriched)": "12"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "48",
+        "Core Fuel": "8",
+        "Blanket Fuel": "24"
+      },
+      "outputs": {
+        "Steam (Super)": "48",
+        "Core Fuel (Spent)": "8",
+        "Blanket Fuel (Enriched)": "24"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "72",
+        "Core Fuel": "12",
+        "Blanket Fuel": "36"
+      },
+      "outputs": {
+        "Steam (Super)": "72",
+        "Core Fuel (Spent)": "12",
+        "Blanket Fuel (Enriched)": "36"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "96",
+        "Core Fuel": "16",
+        "Blanket Fuel": "48"
+      },
+      "outputs": {
+        "Steam (Super)": "96",
+        "Core Fuel (Spent)": "16",
+        "Blanket Fuel (Enriched)": "48"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "96",
+        "Core Fuel": "2"
+      },
+      "outputs": {
+        "Steam (Super)": "96",
+        "Core Fuel (Spent)": "2"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "96",
+        "Core Fuel": "4",
+        "Blanket Fuel": "4"
+      },
+      "outputs": {
+        "Steam (Super)": "96",
+        "Core Fuel (Spent)": "4",
+        "Blanket Fuel (Enriched)": "4"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "Core Fuel": "4"
+      },
+      "outputs": {
+        "Steam (Super)": "192",
+        "Core Fuel (Spent)": "4"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "Core Fuel": "8",
+        "Blanket Fuel": "8"
+      },
+      "outputs": {
+        "Steam (Super)": "192",
+        "Core Fuel (Spent)": "8",
+        "Blanket Fuel (Enriched)": "8"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "288",
+        "Core Fuel": "6"
+      },
+      "outputs": {
+        "Steam (Super)": "288",
+        "Core Fuel (Spent)": "6"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "288",
+        "Core Fuel": "12",
+        "Blanket Fuel": "12"
+      },
+      "outputs": {
+        "Steam (Super)": "288",
+        "Core Fuel (Spent)": "12",
+        "Blanket Fuel (Enriched)": "12"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "384",
+        "Core Fuel": "8"
+      },
+      "outputs": {
+        "Steam (Super)": "384",
+        "Core Fuel (Spent)": "8"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "384",
+        "Core Fuel": "16",
+        "Blanket Fuel": "16"
+      },
+      "outputs": {
+        "Steam (Super)": "384",
+        "Core Fuel (Spent)": "16",
+        "Blanket Fuel (Enriched)": "16"
+      },
+      "duration": "60"
+    }
+  ],
+  "Enrichment_Plant": [
+    {
+      "inputs": {
+        "Blanket Fuel (Enriched)": "8"
+      },
+      "outputs": {
+        "Blanket Fuel": "6",
+        "Core Fuel": "2"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Blanket Fuel (Enriched)": "16"
+      },
+      "outputs": {
+        "Blanket Fuel": "12",
+        "Plutonium": "1"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Blanket Fuel (Enriched)": "16"
+      },
+      "outputs": {
+        "Blanket Fuel": "12",
+        "Enriched Uranium (20%)": "2"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Enriched Uranium (4%)": "5",
+        "Hydrogen Fluoride": "2"
+      },
+      "outputs": {
+        "Enriched Uranium (20%)": "1",
+        "Depleted Uranium": "4"
+      },
+      "duration": "120"
+    },
+    {
+      "inputs": {
+        "Reprocessed Uranium (1%)": "4",
+        "Hydrogen Fluoride": "2"
+      },
+      "outputs": {
+        "Enriched Uranium (4%)": "1",
+        "Depleted Uranium": "3"
+      },
+      "duration": "120"
+    },
+    {
+      "inputs": {
+        "Yellowcake": "6",
+        "Hydrogen Fluoride": "2"
+      },
+      "outputs": {
+        "Enriched Uranium (4%)": "1",
+        "Depleted Uranium": "5"
+      },
+      "duration": "120"
+    }
+  ],
+  "Nuclear_Reprocessing_Plant": [
+    {
+      "inputs": {
+        "Core Fuel (Spent)": "16",
+        "Acid": "2",
+        "Molten Glass": "2",
+        "Steel": "1"
+      },
+      "outputs": {
+        "Core Fuel": "12",
+        "Fission Product": "2"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Spent Fuel": "1",
+        "Acid": "1",
+        "Molten Glass": "1",
+        "Salt": "1"
+      },
+      "outputs": {
+        "Blanket Fuel": "1",
+        "Fission Product": "1"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Spent Fuel": "8",
+        "Acid": "6",
+        "Molten Glass": "4"
+      },
+      "outputs": {
+        "Reprocessed Uranium (1%)": "6",
+        "Plutonium": "1",
+        "Fission Product": "2"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Spent MOX": "1",
+        "Acid": "1",
+        "Molten Glass": "1",
+        "Salt": "1"
+      },
+      "outputs": {
+        "Blanket Fuel": "1",
+        "Fission Product": "1"
+      },
+      "duration": "30"
+    }
+  ],
+  "Chemical_Plant_II": [
+    {
+      "inputs": {
+        "Ammonia": "2",
+        "Hydrogen Fluoride": "4",
+        "Steel": "1"
+      },
+      "outputs": {
+        "Anesthetics": "8"
+      },
+      "duration": "20"
+    },
+    {
+      "inputs": {
+        "Ammonia": "4",
+        "Oxygen": "6"
+      },
+      "outputs": {
+        "Fertilizer I": "10"
+      },
+      "duration": "10"
+    },
+    {
+      "inputs": {
+        "Ammonia": "6",
+        "Fuel Gas": "6",
+        "Aluminum": "4"
+      },
+      "outputs": {
+        "Chemical Fuel": "4"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Bauxite Powder": "36",
+        "Brine": "12"
+      },
+      "outputs": {
+        "Hydrated Alumina": "18",
+        "Red Mud": "18"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Blanket Fuel (Enriched)": "2",
+        "Depleted Uranium": "10",
+        "Salt": "4"
+      },
+      "outputs": {
+        "Blanket Fuel": "4"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Carbon Dioxide": "24"
+      },
+      "outputs": {
+        "Graphite": "1"
+      },
+      "duration": "10"
+    },
+    {
+      "inputs": {
+        "Coal": "4",
+        "Chlorine": "12"
+      },
+      "outputs": {
+        "Graphite": "12",
+        "Sour Water": "4"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Diamond": "2",
+        "Cooking Oil": "2"
+      },
+      "outputs": {
+        "Diamond Paste": "8"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Diamond": "2",
+        "Heavy Oil": "1"
+      },
+      "outputs": {
+        "Diamond Paste": "8"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Enriched Uranium (20%)": "2",
+        "Salt": "4"
+      },
+      "outputs": {
+        "Core Fuel": "4"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Ethanol": "3",
+        "Plastic": "2"
+      },
+      "outputs": {
+        "Disinfectant": "8"
+      },
+      "duration": "20"
+    },
+    {
+      "inputs": {
+        "Ethanol": "5",
+        "Cooking Oil": "10"
+      },
+      "outputs": {
+        "Diesel": "18"
+      },
+      "duration": "20"
+    },
+    {
+      "inputs": {
+        "Fertilizer (Organic)": "10",
+        "Ammonia": "4",
+        "Oxygen": "6"
+      },
+      "outputs": {
+        "Fertilizer I": "15"
+      },
+      "duration": "10"
+    },
+    {
+      "inputs": {
+        "Hydrogen": "4",
+        "Nitrogen": "8"
+      },
+      "outputs": {
+        "Ammonia": "4"
+      },
+      "duration": "20"
+    },
+    {
+      "inputs": {
+        "Hydrogen": "12",
+        "Carbon Dioxide": "9"
+      },
+      "outputs": {
+        "Ethanol": "6",
+        "Water": "3"
+      },
+      "duration": "20"
+    },
+    {
+      "inputs": {
+        "Hydrogen": "14",
+        "Carbon Dioxide": "12"
+      },
+      "outputs": {
+        "Fuel Gas": "12",
+        "Water": "1"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Plutonium": "1",
+        "Depleted Uranium": "4"
+      },
+      "outputs": {
+        "MOX Rod": "2"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Plutonium": "1",
+        "Salt": "4"
+      },
+      "outputs": {
+        "Core Fuel": "4"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Poppy": "4",
+        "Acid": "2",
+        "Glass": "2"
+      },
+      "outputs": {
+        "Morphine": "8"
+      },
+      "duration": "20"
+    },
+    {
+      "inputs": {
+        "Titanium Chloride (Pure)": "8",
+        "Salt": "4"
+      },
+      "outputs": {
+        "Titanium Sponge": "8",
+        "Chlorine": "4"
+      },
+      "duration": "20"
+    },
+    {
+      "inputs": {
+        "Titanium Slag": "12",
+        "Chlorine": "6",
+        "Graphite": "1"
+      },
+      "outputs": {
+        "Titanium Chloride": "4",
+        "Slag": "4",
+        "Carbon Dioxide": "4"
+      },
+      "duration": "20"
+    },
+    {
+      "inputs": {
+        "Woodchips": "4",
+        "Limestone": "1",
+        "Steam (High)": "1"
+      },
+      "outputs": {
+        "Paper": "8"
+      },
+      "duration": "20"
+    },
+    {
+      "inputs": {
+        "Yellowcake": "12",
+        "Salt": "4"
+      },
+      "outputs": {
+        "Blanket Fuel": "4"
+      },
+      "duration": "60"
+    }
+  ],
+  "Assembly_II": [
+    {
+      "inputs": {
+        "Construction Parts": "8",
+        "Electronics": "4"
+      },
+      "outputs": {
+        "Construction Parts II": "4"
+      },
+      "duration": "40"
+    },
+    {
+      "inputs": {
+        "Construction Parts II": "8",
+        "Steel": "4"
+      },
+      "outputs": {
+        "Construction Parts III": "4"
+      },
+      "duration": "80"
+    },
+    {
+      "inputs": {
+        "Glass": "4",
+        "Steel": "2",
+        "Wood": "4"
+      },
+      "outputs": {
+        "Household Goods": "8"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Iron": "3",
+        "Wood": "3",
+        "Concrete Slab": "4"
+      },
+      "outputs": {
+        "Construction Parts": "4"
+      },
+      "duration": "20"
+    },
+    {
+      "inputs": {
+        "Iron": "5"
+      },
+      "outputs": {
+        "Mechanical Parts": "4"
+      },
+      "duration": "20"
+    },
+    {
+      "inputs": {
+        "Mechanical Parts": "3",
+        "Electronics": "1"
+      },
+      "outputs": {
+        "Vehicle Parts": "2"
+      },
+      "duration": "15"
+    },
+    {
+      "inputs": {
+        "Mechanical Parts": "4",
+        "Electronics": "2"
+      },
+      "outputs": {
+        "Lab Equipment": "6"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Rubber": "1",
+        "Copper": "6"
+      },
+      "outputs": {
+        "Electronics": "6"
+      },
+      "duration": "30"
+    }
+  ],
+  "Super-Pressure_Turbine": [
+    {
+      "inputs": {
+        "Steam (Super)": "8"
+      },
+      "outputs": {
+        "Mechanical Power": "18000",
+        "Steam (High)": "8"
+      },
+      "duration": "10"
+    }
+  ],
+  "High-Pressure_Turbine_II": [
+    {
+      "inputs": {
+        "Steam (High)": "8"
+      },
+      "outputs": {
+        "Mechanical Power": "12000",
+        "Steam (Low)": "8"
+      },
+      "duration": "10"
+    }
+  ],
+  "Low-Pressure_Turbine_II": [
+    {
+      "inputs": {
+        "Steam (Low)": "8"
+      },
+      "outputs": {
+        "Mechanical Power": "6000",
+        "Steam (Depleted)": "8"
+      },
+      "duration": "10"
+    }
+  ],
+  "Power_Generator_(Large)": [
+    {
+      "inputs": {
+        "Mechanical Power": ""
+      },
+      "outputs": {
+        "Electricity": ""
+      },
+      "duration": null
+    }
+  ],
+  "Cooling_Tower_(Large)": [
+    {
+      "inputs": {
+        "Steam (Depleted)": "16"
+      },
+      "outputs": {
+        "Water": "12"
+      },
+      "duration": "10"
+    },
+    {
+      "inputs": {
+        "Steam (High)": "16"
+      },
+      "outputs": {
+        "Water": "10"
+      },
+      "duration": "10"
+    },
+    {
+      "inputs": {
+        "Steam (Low)": "16"
+      },
+      "outputs": {
+        "Water": "12"
+      },
+      "duration": "10"
+    },
+    {
+      "inputs": {
+        "Steam (Super)": "16"
+      },
+      "outputs": {
+        "Water": "8"
+      },
+      "duration": "10"
+    }
+  ],
+  "Assembly_III": [
+    {
+      "inputs": {
+        "Aluminum": "8",
+        "Steel": "1",
+        "Plastic": "2"
+      },
+      "outputs": {
+        "Composite Panel": "8"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Composite Core Basic": "4",
+        "Solar Cell": "2",
+        "Chemical Fuel": "1"
+      },
+      "outputs": {
+        "Station Parts (Basic)": "2"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Composite Panel": "8",
+        "Steel": "4",
+        "Electronics II": "1"
+      },
+      "outputs": {
+        "Composite Core Basic": "4"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Concrete Slab": "2",
+        "Steel": "1"
+      },
+      "outputs": {
+        "Rail Parts": "4"
+      },
+      "duration": "15"
+    },
+    {
+      "inputs": {
+        "Construction Parts": "8",
+        "Electronics": "4"
+      },
+      "outputs": {
+        "Construction Parts II": "4"
+      },
+      "duration": "20"
+    },
+    {
+      "inputs": {
+        "Construction Parts II": "8",
+        "Steel": "4"
+      },
+      "outputs": {
+        "Construction Parts III": "4"
+      },
+      "duration": "40"
+    },
+    {
+      "inputs": {
+        "Construction Parts III": "8",
+        "Electronics II": "4"
+      },
+      "outputs": {
+        "Construction Parts IV": "4"
+      },
+      "duration": "80"
+    },
+    {
+      "inputs": {
+        "Eggs": "3",
+        "Bread": "6"
+      },
+      "outputs": {
+        "Food Pack": "4"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Electronics": "8",
+        "Electronics II": "4",
+        "Steel": "4"
+      },
+      "outputs": {
+        "Household Appliances": "12"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Enriched Uranium (4%)": "2",
+        "Steel": "1"
+      },
+      "outputs": {
+        "Uranium Rod": "2"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Food Pack": "2",
+        "Medical Supplies II": "1",
+        "Plastic": "1"
+      },
+      "outputs": {
+        "Crew Supplies": "4"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Glass": "2",
+        "Plastic": "4",
+        "Copper": "2"
+      },
+      "outputs": {
+        "PCB": "8"
+      },
+      "duration": "40"
+    },
+    {
+      "inputs": {
+        "Glass": "4",
+        "Steel": "2",
+        "Wood": "4"
+      },
+      "outputs": {
+        "Household Goods": "8"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Gold": "2",
+        "Imported Goods": "6"
+      },
+      "outputs": {
+        "Luxury Goods": "8"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Iron": "3",
+        "Wood": "3",
+        "Concrete Slab": "4"
+      },
+      "outputs": {
+        "Construction Parts": "4"
+      },
+      "duration": "10"
+    },
+    {
+      "inputs": {
+        "Iron": "5"
+      },
+      "outputs": {
+        "Mechanical Parts": "4"
+      },
+      "duration": "10"
+    },
+    {
+      "inputs": {
+        "Lab Equipment": "6",
+        "Paper": "2",
+        "Glass": "2"
+      },
+      "outputs": {
+        "Lab Equipment II": "6"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Lab Equipment II": "6",
+        "Electronics II": "1"
+      },
+      "outputs": {
+        "Lab Equipment III": "6"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Meat": "3",
+        "Bread": "6"
+      },
+      "outputs": {
+        "Food Pack": "4"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Mechanical Parts": "3",
+        "Electronics": "1"
+      },
+      "outputs": {
+        "Vehicle Parts": "2"
+      },
+      "duration": "8"
+    },
+    {
+      "inputs": {
+        "Mechanical Parts": "4",
+        "Electronics": "2"
+      },
+      "outputs": {
+        "Lab Equipment": "6"
+      },
+      "duration": "15"
+    },
+    {
+      "inputs": {
+        "Medical Equipment": "4",
+        "Disinfectant": "4"
+      },
+      "outputs": {
+        "Medical Supplies": "8"
+      },
+      "duration": "20"
+    },
+    {
+      "inputs": {
+        "Medical Supplies": "8",
+        "Antibiotics": "4"
+      },
+      "outputs": {
+        "Medical Supplies II": "8"
+      },
+      "duration": "20"
+    },
+    {
+      "inputs": {
+        "Medical Supplies II": "8",
+        "Anesthetics": "4",
+        "Morphine": "4"
+      },
+      "outputs": {
+        "Medical Supplies III": "8"
+      },
+      "duration": "20"
+    },
+    {
+      "inputs": {
+        "Paper": "3",
+        "Household Goods": "2",
+        "Electronics II": "1"
+      },
+      "outputs": {
+        "Office Supplies": "6"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "PCB": "4",
+        "Electronics": "8",
+        "Silicon (Poly)": "2"
+      },
+      "outputs": {
+        "Electronics II": "4"
+      },
+      "duration": "40"
+    },
+    {
+      "inputs": {
+        "Rubber": "1",
+        "Copper": "6"
+      },
+      "outputs": {
+        "Electronics": "6"
+      },
+      "duration": "15"
+    },
+    {
+      "inputs": {
+        "Steel": "1",
+        "Silicon (Poly)": "12",
+        "Glass": "4"
+      },
+      "outputs": {
+        "Solar Cell": "8"
+      },
+      "duration": "120"
+    },
+    {
+      "inputs": {
+        "Steel": "2",
+        "Wood": "2",
+        "Concrete Slab": "3"
+      },
+      "outputs": {
+        "Construction Parts": "4"
+      },
+      "duration": "10"
+    },
+    {
+      "inputs": {
+        "Steel": "4"
+      },
+      "outputs": {
+        "Mechanical Parts": "8"
+      },
+      "duration": "20"
+    },
+    {
+      "inputs": {
+        "Steel": "4",
+        "Plastic": "4"
+      },
+      "outputs": {
+        "Medical Equipment": "4"
+      },
+      "duration": "40"
+    },
+    {
+      "inputs": {
+        "Tofu": "6",
+        "Vegetables": "8"
+      },
+      "outputs": {
+        "Food Pack": "4"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Vehicle Parts": "4",
+        "Steel": "2",
+        "Glass": "1"
+      },
+      "outputs": {
+        "Vehicle Parts II": "2"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Vehicle Parts II": "4",
+        "Electronics II": "1"
+      },
+      "outputs": {
+        "Vehicle Parts III": "2"
+      },
+      "duration": "30"
+    }
+  ],
+  "Uranium_Rod": [
+    {
+      "inputs": {
+        "Enriched Uranium (4%)": "2",
+        "Steel": "1"
+      },
+      "outputs": {
+        "Uranium Rod": "2"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Enriched Uranium (4%)": "2",
+        "Steel": "1"
+      },
+      "outputs": {
+        "Uranium Rod": "2"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Enriched Uranium (4%)": "2",
+        "Steel": "1"
+      },
+      "outputs": {
+        "Uranium Rod": "2"
+      },
+      "duration": "15"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "Uranium Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent Fuel": "1"
+      },
+      "duration": "40"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "Uranium Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent Fuel": "1"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "Uranium Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent Fuel": "1"
+      },
+      "duration": "120"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "Uranium Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent Fuel": "1"
+      },
+      "duration": "30"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "Uranium Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent Fuel": "1"
+      },
+      "duration": "40"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "Uranium Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent Fuel": "1"
+      },
+      "duration": "60"
+    },
+    {
+      "inputs": {
+        "Water": "192",
+        "Uranium Rod": "1"
+      },
+      "outputs": {
+        "Steam (High)": "192",
+        "Spent Fuel": "1"
+      },
+      "duration": "120"
+    }
+  ]
+}

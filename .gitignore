@@ -1,0 +1,11 @@
+__pycache__/
+.venv/
+*.pyc
+.env
+.env.*
+!.env.example
+# Local third-party image downloads and original Wiki page snapshots.
+web/icons/wiki_*.png
+web/icons/wiki-notices/
+research/*.html.txt
+nuclear-preview.jpg
