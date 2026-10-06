@@ -11,3 +11,7 @@ research/*.html.txt
 nuclear-preview.jpg
 
 building-views-preview.jpg
+
+build/
+dist/
+*.spec

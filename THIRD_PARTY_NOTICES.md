@@ -32,3 +32,9 @@ local research artifacts and are not distributed in the repository.
 
 SciPy and its NumPy dependency retain their own licenses. They are installed
 separately through pip and are not vendored in this repository.
+
+The optional desktop distribution bundles Python, SciPy, NumPy, pywebview,
+pythonnet and their runtime dependencies. Their metadata and license files are
+preserved in the portable package's `licenses` directory. The project's MIT
+license does not replace those licenses. Microsoft Edge WebView2 Runtime is a
+system prerequisite and is not bundled in the portable package.

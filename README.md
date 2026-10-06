@@ -100,3 +100,13 @@ fetch_wiki_icons.py 可联网重新采集当前八张图标。配方的 wikiIcon
 “我的建筑”支持超大、大、中、小图标、列表、详细信息、平铺和内容八种视图。详细信息展示整组输入输出、电力和工人；其他紧凑视图可展开编辑。显示方式和合并开关保存在当前浏览器。
 
 默认按建筑类型、配方、运行开关和负荷合并显示。核电设备还比较电站组，反应堆还比较档位、调节方式、燃料及增殖设置。数据仍逐座保存，整组编辑同时应用到组内建筑；“逐座编辑”关闭合并。合并不影响配平、导出或核电容量计算。
+
+### Windows 桌面便携版
+
+下载或构建便携压缩包，解压后双击 `CoI-Balancer.exe`。完整保留 `_internal` 目录。无需安装 Python、手动部署站点或登录，计算离线进行。支持 Windows 10/11，需要 Microsoft Edge WebView2 Runtime；缺少时从微软官方安装 Runtime。关闭窗口会停止后台服务。内部服务只绑定回环地址，每次自动选择空闲端口。
+
+方案通过“保存方案”写入 `%LOCALAPPDATA%\CoI Balancer\scenarios.json`；更新、移动或删除便携目录不会删除方案。该文件损坏时会明确报错，不覆盖原文件。浏览器版存储独立，可通过导出/导入 JSON 转移方案。
+
+开发运行：`python -m pip install -r requirements-desktop.txt`，然后 `python desktop.py`。Windows 构建：`powershell -ExecutionPolicy Bypass -File .\build-desktop.ps1`；可通过 `-Python` 指定 Python 路径。输出为 `dist/CoI-Balancer-Windows.zip`。建议使用 Python 3.11–3.14，构建系统与目标系统需同为 Windows。
+
+默认分发包使用项目 SVG 图标，并附带 MIT 与第三方说明。Wiki 游戏图标不属于 MIT，保留原文件页许可说明。本地已下载图标可使用 `-IncludeWikiIcons` 一并打包；公开分发此类包前应确认游戏素材再分发许可。程序启动不会访问 Wiki 或自动下载图标。
