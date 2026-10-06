@@ -1,0 +1,15 @@
+const assert=require('node:assert/strict');
+const {groups}=require('./web/building-views.js');
+const recipes=[{id:'a'},{id:'b',reactorType:'fbr'},{id:'c',plantRole:'generator'}];
+const a={id:'1',buildingId:'furnace',recipeId:'a',load:1,enabled:true};
+const b={...a,id:'2'};
+assert.equal(groups([a,b],recipes,true)[0].length,2);
+assert.equal(groups([a,b],recipes,false).length,2);
+for(const change of [{load:.5},{enabled:false},{recipeId:'c'},{buildingId:'other'},{custom:'different'}])assert.equal(groups([a,{...b,...change}],recipes,true).length,2);
+const reactor={...a,buildingId:'reactor',recipeId:'b',level:4,breeding:1,blanketFraction:1};
+for(const change of [{level:3},{breeding:3},{blanketFraction:.5},{control:'auto'},{station:'第二电站'}])assert.equal(groups([reactor,{...reactor,id:'2',...change}],recipes,true).length,2);
+assert.equal(groups([{...reactor,control:'auto',averageLevel:2},{...reactor,control:'auto',averageLevel:3}],recipes,true).length,2);
+assert.equal(groups([{...a,recipeId:'c',station:'A'},{...b,recipeId:'c',station:'B'}],recipes,true).length,2);
+const snapshot=JSON.stringify([a,b]);groups([a,b],recipes,true);assert.equal(JSON.stringify([a,b]),snapshot);
+assert.strictEqual(groups([a,b],recipes,true)[0][0],a);
+console.log('Building view grouping checks passed');
