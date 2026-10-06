@@ -55,7 +55,13 @@ def main():
         directory.mkdir(parents=True, exist_ok=True)
     else:
         directory = user_directory()
+    solver_lock = threading.Lock()
     class DesktopHandler(Handler):
+        def do_POST(self):
+            # HiGHS calls from the live capacity check and manual solves must
+            # not overlap in different HTTP handler threads.
+            with solver_lock:
+                super().do_POST()
         def end_headers(self):
             if development:
                 self.send_header('Cache-Control', 'no-store')
@@ -94,12 +100,12 @@ def main():
                     scenario = {'recipes': [{'id':'test','name':'test','duration':60,'inputs':{'ore':1},'outputs':{'product':1},'count':1}], 'policies':{'ore':{'import':True},'product':{'target':1}}}
                     for mode in ['audit', 'solve', 'integer']:
                         request = urllib.request.Request(url+'/api/'+mode, data=json.dumps(scenario).encode(), headers={'Content-Type':'application/json'})
-                        with urllib.request.urlopen(request) as response:
+                        with urllib.request.urlopen(request, timeout=15) as response:
                             assert json.load(response)['ok'], mode
-                    with urllib.request.urlopen(url+'/nuclear-catalog.json') as response:
+                    with urllib.request.urlopen(url+'/nuclear-catalog.json', timeout=15) as response:
                         catalog = json.load(response)
                     request = urllib.request.Request(url+'/api/plant', data=json.dumps(catalog).encode(), headers={'Content-Type':'application/json'})
-                    with urllib.request.urlopen(request) as response:
+                    with urllib.request.urlopen(request, timeout=15) as response:
                         assert json.load(response)['ok']
                     store = ScenarioStore(directory)
                     store.write_scenarios({'smoke': scenario})
