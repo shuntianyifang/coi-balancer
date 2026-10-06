@@ -45,21 +45,44 @@ class ScenarioStore:
 def main():
     import webview
     smoke = len(sys.argv) == 3 and sys.argv[1] == '--smoke-test'
+    development = '--dev' in sys.argv
     if smoke:
         import tempfile
         temporary_directory = tempfile.TemporaryDirectory()
         directory = Path(temporary_directory.name)
+    elif development:
+        directory = Path(__file__).parent / 'build' / 'dev-user'
+        directory.mkdir(parents=True, exist_ok=True)
     else:
         directory = user_directory()
-    httpd = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+    class DesktopHandler(Handler):
+        def end_headers(self):
+            if development:
+                self.send_header('Cache-Control', 'no-store')
+            super().end_headers()
+    httpd = ThreadingHTTPServer(('127.0.0.1', 0), DesktopHandler)
     httpd.daemon_threads = True
     worker = threading.Thread(target=httpd.serve_forever, daemon=True)
     worker.start()
+    stop = threading.Event()
+    restart = threading.Event()
+    watcher = None
     try:
+        api = ScenarioStore(directory)
+        if development:
+            from dev_runtime import DevelopmentState, watch_sources
+            state = DevelopmentState(directory)
+            api.read_draft = state.read_draft
         window = webview.create_window('CoI 配平工作台',
             f'http://127.0.0.1:{httpd.server_port}/?example=reactors',
-            js_api=ScenarioStore(directory), width=1280, height=900,
+            js_api=api, width=1280, height=900,
             min_size=(800, 600), hidden=smoke)
+        if development:
+            ready = threading.Event()
+            window.events.loaded += ready.set
+            watcher = threading.Thread(target=watch_sources,
+                args=(Path(__file__).parent, window, state, ready, stop, restart), daemon=True)
+            watcher.start()
         if smoke:
             outcome = {'ok': False, 'message': 'Window load timed out'}
             def check_window():
@@ -93,6 +116,9 @@ def main():
         webview.start(gui='edgechromium' if sys.platform == 'win32' else None,
                       private_mode=False, storage_path=str(directory / 'webview'))
     finally:
+        stop.set()
+        if watcher:
+            watcher.join(timeout=3)
         httpd.shutdown()
         httpd.server_close()
         worker.join(timeout=3)
@@ -101,18 +127,21 @@ def main():
             outcome['serverStopped'] = not worker.is_alive()
             Path(sys.argv[2]).write_text(json.dumps(outcome, ensure_ascii=False), encoding='utf-8')
             temporary_directory.cleanup()
+    return 75 if restart.is_set() else 0
 
 
 if __name__ == '__main__':
     try:
-        main()
+        sys.exit(main())
     except Exception:
         import traceback
         details = traceback.format_exc()
         try:
             (user_directory() / 'desktop-error.log').write_text(details, encoding='utf-8')
         finally:
-            if sys.platform == 'win32':
+            if '--dev' in sys.argv or '--smoke-test' in sys.argv:
+                print(details, file=sys.stderr)
+            elif sys.platform == 'win32':
                 import ctypes
                 ctypes.windll.user32.MessageBoxW(None,
                     '无法启动桌面版。请确认已安装 Microsoft Edge WebView2 Runtime。\n'

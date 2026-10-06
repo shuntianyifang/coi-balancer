@@ -110,3 +110,11 @@ fetch_wiki_icons.py 可联网重新采集当前八张图标。配方的 wikiIcon
 开发运行：`python -m pip install -r requirements-desktop.txt`，然后 `python desktop.py`。Windows 构建：`powershell -ExecutionPolicy Bypass -File .\build-desktop.ps1`；可通过 `-Python` 指定 Python 路径。输出为 `dist/CoI-Balancer-Windows.zip`。建议使用 Python 3.11–3.14，构建系统与目标系统需同为 Windows。
 
 默认分发包使用项目 SVG 图标，并附带 MIT 与第三方说明。Wiki 游戏图标不属于 MIT，保留原文件页许可说明。本地已下载图标可使用 `-IncludeWikiIcons` 一并打包；公开分发此类包前应确认游戏素材再分发许可。程序启动不会访问 Wiki 或自动下载图标。
+
+### 即时开发与统一检查
+
+双击 `开发模式.cmd`（首次先安装 `requirements-desktop.txt`），或运行 `powershell -ExecutionPolicy Bypass -File .\dev.ps1`。网页资源保存后自动刷新；项目根目录 Python 文件保存后自动关闭并重新启动窗口。关闭窗口则结束开发模式。发生启动错误时终端显示错误，修复 Python 并保存后重试。
+
+刷新或自动重启前保留当前场景和 JSON 编辑草稿，恢复后重新计算结果。开发模式的数据存放于项目 `build/dev-user`，与正式版方案隔离。手动关闭窗口不保存临时草稿；需要长期保留的方案仍请点击“保存方案”。
+
+双击 `检查项目.cmd`，或运行 `powershell -ExecutionPolicy Bypass -File .\check.ps1`，依次检查 Python 测试、全部网页 JS 语法、建筑逻辑测试与真实 WebView2 启动/求解/退出。需要 Node.js 和桌面依赖；`-SkipDesktop` 可只运行逻辑检查。任何失败返回非零状态。桌面检查使用临时方案目录，不改正式版数据。
